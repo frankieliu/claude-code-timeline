@@ -122,7 +122,42 @@ If your Claude Code session is still running:
 4. **Clean Rewinding**: Use `/rewind` to keep sessions focused and performant
 5. **Export Key Decisions**: Use "Show prompts" to document important conversations
 
-## Example Workflow
+## Example Workflows
+
+### Complete Workflow: Find, Analyze, and Resume
+
+This workflow combines multiple tools for maximum efficiency:
+
+1. **Find the session file** - Use [Claude Code Viewer](../../claude-code-viewer) to browse or search
+   - Browse your projects or use search utilities
+   - Click the info icon (ⓘ) to copy the full file path
+
+2. **Load in Timeline Viewer** - Open the timeline viewer and load the session
+   - Click the file picker and press `Cmd+Shift+G`
+   - Paste the copied path to quickly navigate to the file
+
+3. **Analyze the session** - Use filters to understand what happened
+   - Filter by **Role: user** + **Content Type: text** to see all user communications
+   - Identify the event number where you want to resume (e.g., `#42`)
+   - Note any key decisions or turning points
+
+4. **Navigate to project** - Open terminal and go to the project directory
+   ```bash
+   cd /path/to/your/project
+   ```
+
+5. **Resume Claude session** - Open Claude and select the session
+   ```bash
+   claude --resume
+   # Or from within Claude: /resume
+   ```
+
+6. **Rewind to specific point** - Jump to the event you identified
+   - Press `Esc` twice (or type `/rewind`)
+   - Enter the event number (e.g., `42`)
+   - Continue from that point with a fresh direction
+
+### Quick Rewind During Active Session
 
 ```bash
 # Working on a feature
